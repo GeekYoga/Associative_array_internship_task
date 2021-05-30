@@ -1,15 +1,17 @@
 package associativeArray;
 
-public class Pair<T1, T2>{
+import java.util.Objects;
 
-    private T1 key;
-    private T2 value;
+public class Pair<K, V>{
+
+    private K key;
+    private V value;
 
     /** Pair constructor
      * @param k key of pair
      * @param v value of pair
     */
-    Pair(T1 k, T2 v) {
+    Pair(K k, V v) {
         setKey(k);
         setValue(v);
     }
@@ -17,26 +19,26 @@ public class Pair<T1, T2>{
     /** Key of the pair.
     * @return key
     */
-    public T1 getKey() {
+    public K getKey() {
         return this.key;
     }
 
     /** Set key of the pair.
     */
-    public void setKey(T1 k) {
+    public void setKey(K k) {
         this.key = k;
     }
 
     /** Value of the pair.
     * @return value
     */
-    public T2 getValue() {
+    public V getValue() {
         return this.value;
     }
 
     /** Set value of the pair.
     */
-    public void setValue(T2 v) {
+    public void setValue(V v) {
         this.value = v;
     }
 
@@ -52,7 +54,28 @@ public class Pair<T1, T2>{
         return sb.toString();
     }
 
-    //TODO hashCode()
-    //TODO equalsTo()
+    /** Integer hashCode has to be the same for equal objects.
+    * @return hashcode
+    */
+   @Override
+   public int hashCode() {
+      return Objects.hash(this.getKey(), this.getValue());
+   }
+
+    /**Equality test of pairs.
+     *
+     * @param o second pair
+     * @return logical value of the expression <code>this.equals(o)</code>
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Pair)) {
+            throw new ClassCastException("Object " + o + " is NOT Pair");
+        }
+
+        Pair p = (Pair) o;
+
+        return this.getKey().equals(p.getKey()) && this.getValue().equals(p.getValue());
+    }
 
 }
