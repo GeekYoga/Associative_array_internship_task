@@ -1,5 +1,6 @@
 # README #
 Technical task for an applicant for the Software Engineering Intern role.
+Implementation of Associative array.
 
 ## Command line examples. Näidete kasutamine käsurealt ##
 #### Compilation. Kompileerimine: ####
