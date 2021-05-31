@@ -7,7 +7,9 @@ public class Pair<K, V>{
     private K key;
     private V value;
 
-    /** Pair constructor
+    /**
+     * Pair constructor
+     *
      * @param k key of pair
      * @param v value of pair
     */
@@ -16,33 +18,41 @@ public class Pair<K, V>{
         setValue(v);
     }
 
-    /** Key of the pair.
+    /**
+     * Key of the pair.
+     *
     * @return key
     */
     public K getKey() {
         return this.key;
     }
 
-    /** Set key of the pair.
+    /**
+     * Set key of the pair.
     */
     public void setKey(K k) {
         this.key = k;
     }
 
-    /** Value of the pair.
+    /**
+     * Value of the pair.
+     *
     * @return value
     */
     public V getValue() {
         return this.value;
     }
 
-    /** Set value of the pair.
+    /**
+     * Set value of the pair.
     */
     public void setValue(V v) {
         this.value = v;
     }
 
-    /** Conversion of the pair to the string.
+    /**
+     * Conversion of the pair to the string.
+     *
     * @return a key and value of node as string
     */
     @Override
@@ -54,7 +64,9 @@ public class Pair<K, V>{
         return sb.toString();
     }
 
-    /** Integer hashCode has to be the same for equal objects.
+    /**
+     * Integer hashCode has to be the same for equal objects.
+     *
     * @return hashcode
     */
    @Override
@@ -62,7 +74,8 @@ public class Pair<K, V>{
       return Objects.hash(this.getKey(), this.getValue());
    }
 
-    /**Equality test of pairs.
+    /**
+     * Equality test of pairs.
      *
      * @param o second pair
      * @return logical value of the expression <code>this.equals(o)</code>
@@ -77,5 +90,4 @@ public class Pair<K, V>{
 
         return this.getKey().equals(p.getKey()) && this.getValue().equals(p.getValue());
     }
-
 }
