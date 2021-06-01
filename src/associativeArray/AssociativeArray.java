@@ -14,7 +14,7 @@ public class AssociativeArray<K, V>{
         System.out.println(test.containsKey("1"));
     }
 
-    private ArrayList<Pair<K, V>> pairs;
+    private final ArrayList<Pair<K, V>> pairs;
 
     /**
      * Associative array constructor
